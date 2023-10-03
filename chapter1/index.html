@@ -9,14 +9,34 @@
 </head>
 <body class="container mt-5">
 <!-- App Template Code Here -->
-<div>
-
+<div id="app">
+<h1>{{ name }}</h1>
+</div>
+<hr>
+<div id="app2">
+    <h1>{{ name }}</h1>
 </div>
 <!-- App Template Code Here -->
 
 <!-- App Script Code Here -->
 <script>
+ const App = {
+   data(){
+       return {
+           name: 'Bamboo Thermal Ski Coat'
+       }
+   }
+ }
 
+ Vue.createApp(App).mount('#app')
+
+ Vue.createApp({
+     data(){
+         return {
+             name: 'test'
+         }
+     }
+ }).mount('#app2')
 </script>
 <!-- App Script Code Here -->
 </body>
