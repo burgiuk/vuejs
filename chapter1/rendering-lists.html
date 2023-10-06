@@ -10,13 +10,13 @@
 <body class="container mt-5">
 <!-- App Template Code Here -->
 <section class="container" id="app">
-    <div id="display-list" class="row d-flex mb-3 align-items-center" v-for="(product, index) in products">
+    <div id="display-list" class="row d-flex mb-3 align-items-center" v-for="(product, myKey , index) in products" :key="product.id">
         <div class="col-sm-4">
             <img class="img-fluid d-block" :src="product.image" :alt="product.name">
         </div>
         <div class="col">
             <h3 class="text-info">{{ index +1 }} {{product.name}}</h3>
-            <p class="mb-0">{{product.description}}</p>
+            <p class="mb-0">{{ myKey }} {{product.description}}</p>
             <div class="h5 float-right">${{product.price}}</div>
         </div>
     </div>
