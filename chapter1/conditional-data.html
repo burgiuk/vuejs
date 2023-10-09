@@ -11,7 +11,7 @@
 <!-- App Template Code Here -->
 <section class="container" id="app">
     <div v-for="item in products" :key="item.id" id="item-list" class="row d-flex mb-3 align-items-center">
-        <template v-if="item.price < 99">
+        <template v-show="item.price <= max">
         <div class="col-sm-4">
             <img class="img-fluid d-block" :src="item.image" :alt="item.name">
         </div>
@@ -35,6 +35,7 @@
     const App = {
         data() {
             return {
+                max:100,
                 products : [
                     {
                         "id": "532",
