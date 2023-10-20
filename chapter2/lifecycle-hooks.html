@@ -63,8 +63,11 @@
 <!-- App Script Code Here -->
 <script>
     const App = {
-        created(){
+        created() {
             this.products = [];
+            const response = fetch("https://hplussport.com/api/products/order/price");
+            console.log(response);
+            this.products = response.json();
         },
         data() {
             return {
